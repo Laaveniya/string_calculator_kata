@@ -26,5 +26,11 @@ RSpec.describe StringCalculator do
         expect(calculator.add("1\n5,3")).to eq(9)
       end
     end
+
+    context 'when a custom delimiter is given at the beginning of the string i.e. "//[delimiter]\n[numbers…]"' do
+      it 'returns the exact sum' do
+        expect(calculator.add("//;\n1;2")).to eq(3)
+      end
+    end
   end
 end
