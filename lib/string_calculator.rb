@@ -3,6 +3,7 @@
 class StringCalculator
 
   def add(numbers)
-    numbers.split(',').map(&:to_i).sum
+    santized_string = numbers.gsub("\n", ',')
+    santized_string.split(',').map(&:to_i).sum
   end
 end
